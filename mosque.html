@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mosque and the Prayer Times</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta description="Mosque prayer times" />
+    <style>
+      /* --- Base styles (unchanged) --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #f6f8f7;
+        color: #222;
+      }
+
+      .header {
+        background: linear-gradient(90deg, #036c3c, #03b050);
+        color: white;
+        padding: 25px 10px;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .topnav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: #111;
+      }
+
+      .topnav a {
+        color: white;
+        padding: 12px 20px;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+
+      .topnav a:hover {
+        background-color: #04aa6d;
+      }
+
+      .topnav a.active {
+        background-color: #04aa6d;
+        color: white;
+      }
+
+      /* --- Improved layout styles --- */
+      #clockDisplay,
+      #date {
+        text-align: center;
+        margin-top: 10px;
+        font-weight: 500;
+        color: #036c3c;
+      }
+
+      section {
+        background-color: white;
+        margin: 30px auto;
+        padding: 30px 20px;
+        border-radius: 12px;
+        max-width: 1000px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      section h2 {
+        text-align: center;
+        color: #036c3c;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        background: #f9fff9;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      thead th {
+        background-color: #04aa6d;
+        color: white;
+        padding: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #eefbef;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+      }
+
+      tfoot {
+        text-align: center;
+        padding: 10px;
+        background-color: #036c3c;
+        color: white;
+        font-style: italic;
+        border-top: 2px solid #03b050;
+      }
+
+      /* Location Section */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .column {
+        flex: 1 1 45%;
+        background-color: #f2fdf2;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .column:hover {
+        transform: translateY(-4px);
+      }
+
+      .column h2 {
+        color: #04aa6d;
+        margin-bottom: 10px;
+      }
+
+      iframe {
+        width: 100%;
+        height: 400px;
+        border: 0;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+
+      button {
+        display: inline-block;
+        background-color: #04aa6d;
+        color: white;
+        border: none;
+      
+        margin-top: 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #036c3c;
+      }
+
+
+      @media (max-width: 768px) {
+        .header {
+          font-size: 1.5rem;
+        }
+
+        .topnav a {
+          flex: 1 1 100%;
+          text-align: left;
+          padding-left: 20px;
+        }
+
+        .column {
+          flex: 1 1 100%;
+        }
+      }
+       footer {
+        background-color: #111;
+        color: white;
+        text-align: center;
+        padding: 25px 15px;
+        margin-top: 40px;
+      }
+
+      footer a {
+        color: #04aa6d;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-bottom {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: #ccc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="clockDisplay"></div>
+    <div id="date"></div>
+
+    <div class="header">
+      <h1 class="text-warning">JKUMSA</h1>
+    </div>
+
+    <div class="topnav">
+      <a href="home.html" target="_blank">Home</a>
+      <a class="active">Mosque and Prayer times</a>
+      <a href="charity.html" target="_blank">Donate</a>
+      <a href="learning.html" target="_blank">Learning</a>
+      <a href="business.html" target="_blank">Shop</a>
+      <a href="events.html" target="_blank">Events</a>
+      <a href="login.html" target="_blank">Login</a>
+    </div>
+
+    <section>
+      <h2>Prayer Times</h2>
+      <table>
+        <thead>
+          <tr><th>Prayer</th><th>Adhan</th><th>Iqamah</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>Maghrib</th><td>6.23 pm</td><td></td></tr>
+          <tr><th>Isha</th><td>8.00 pm</td><td>8.15 pm</td></tr>
+          <tr><th>Fajr</th><td>5.10 am</td><td>5.25 am</td></tr>
+          <tr><th>Dhuhr</th><td>12.45 pm</td><td>1.00 pm</td></tr>
+          <tr><th>Asr</th><td>4.00 pm</td><td>4.15 pm</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="3">Congregational prayer is seventy seven times better than individual prayer</td></tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section>
+      <h2>Weekly Programmes</h2>
+      <table>
+        <thead>
+          <tr><th>Day</th><th>Program</th><th>Time</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>Sunday</th><td></td><td></td></tr>
+          <tr><th>Monday</th><td>Reminder</td><td rowspan="4">After Maghrib prayer</td></tr>
+          <tr><th>Tuesday</th><td>Stories of the Sahabah</td></tr>
+          <tr><th>Wednesday</th><td>Seerah of the Prophet SAW</td></tr>
+          <tr><th>Thursday</th><td>Q&A Session</td></tr>
+          <tr><th>Friday</th><td>Khutbah & Salah</td><td>Friday Prayer</td></tr>
+          <tr><th>Saturday</th><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h1 style="text-align: center; color: #036c3c; margin-bottom: 20px;">
+        Location of the Mosque
+      </h1>
+      <div class="row">
+        <div class="column">
+          <h2>Mosque for the Males</h2>
+          <p>At DIPCA</p>
+          <p>Gate next to Fundilima Sacco</p>
+          <p>Before reaching JKUAT Primary School</p>
+        </div>
+
+        <div class="column">
+          <h2>Mosque for the Females</h2>
+          <p>Between Hall 6 and Hall 6 Annex</p>
+        </div>
+      </div>
+
+      <iframe
+        src="https://www.google.com/maps/place/JKUAT+Mosque/@-1.0956675,37.0089296,17z/data=!3m1!4b1!4m6!3m5!1s0x182f472b55b53467:0x3c3125e1cdf7ecd6!8m2!3d-1.0956729!4d37.0115045!16s%2Fg%2F11vksb1l3s?entry=ttu&g_ep=EgoyMDI1MTAwNC4wIKXMDSoASAFQAw%3D%3D"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+
+      <p style="text-align: center">
+        <button onclick="openDirections()">Get Directions</button>
+      </p>
+    </section>
+
+    <footer>
+      <p>
+        <strong>JKUAT Muslim Students Association (JKUMSA)</strong><br />
+        Promoting unity, spirituality, and service within the campus.
+      </p>
+      <p>
+        <a href="mailto:jkumsa.maincampus@gmail.com">jkumsa.maincampus@gmail.com</a> |
+        <a href="#">Privacy Policy</a>
+      </p>
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> JKUMSA | All Rights Reserved
+      </div>
+    </footer>
+
+    <script>
+      function renderTime() {
+        var currentTime = new Date();
+        var diem = "AM";
+        var h = currentTime.getHours();
+        var m = currentTime.getMinutes();
+        var s = currentTime.getSeconds();
+        if (h == 0) {
+          h = 12;
+        } else if (h > 12) {
+          h = h - 12;
+          diem = "PM";
+        }
+        if (h < 10) h = "0" + h;
+        if (m < 10) m = "0" + m;
+        if (s < 10) s = "0" + s;
+        var myClock = document.getElementById("clockDisplay");
+        myClock.textContent = h + ":" + m + ":" + s + " " + diem;
+        setTimeout(renderTime, 1000);
+      }
+      renderTime();
+
+      const date = new Date();
+      const time = date.getDay();
+      const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      document.getElementById("date").innerHTML =
+        date.getFullYear() +
+        "-" +
+        (date.getMonth() + 1) +
+        "-" +
+        date.getDate() +
+        "  " +
+        days[time];
+
+      function openDirections() {
+        const lat = -1.0985;
+        const lng = 37.0135;
+        const label = encodeURIComponent("DIPCA Mosque, JKUAT Juja");
+        const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}&query_place_id=${label}`;
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
+</html>

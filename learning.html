@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>jkumsa learning</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="JKUMSA Learning Page">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            * {margin: 0; padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #f6f8f7;
+        color: #222;
+      }
+
+      /* Header */
+      .header {
+        background: linear-gradient(90deg, #036c3c, #03b050);
+        color: white;
+        padding: 25px 10px;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Navbar */
+      .topnav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: #111;
+      }
+
+      .topnav a {
+        color: white;
+        padding: 12px 20px;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+
+      .topnav a:hover {
+        background-color: #04aa6d;
+      }
+
+      .topnav a.active {
+        background-color: #04aa6d;
+        color: white;
+      }
+            .container {display: flex; flex-wrap: wrap; gap: 20px; padding: 30px; justify-content: center;}
+            
+            .column {flex: 1 1 400px; max-width: 500px;}
+            .card {background-color: beige; border-radius: 10px; box-shadow: 0 2px 5px grey; 
+            margin-bottom: 20px; padding: 20px; transition: transform 0.2s ease, box-shadow 0.2s ease;}
+            .card:hover {transform: translateY(-3px); box-shadow: 0 4px 10px gainsboro;}
+            @media (max-width: 600px) {
+        .header {
+          font-size: 1.6rem;
+        }
+        .topnav a {
+          flex: 1 1 100%;
+          text-align: left;
+          padding-left: 20px;
+        }
+      }
+
+      /* Navbar styling */
+.dropbtn {
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.dropbtn a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+.dropdown:hover .dropbtn {
+  background-color: #1abc9c;
+  color: white;
+}
+
+.active {
+  background-color: #1abc9c;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #34495e;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #1abc9c;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Make the nav responsive */
+@media (max-width: 768px) {
+  .topnav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .dropdown-content {
+    position: static;
+  }
+}
+
+        </style> 
+    </head>
+    <body>      
+        <div class="header">
+            <h1 class="text-warning">JKUMSA</h1>
+        </div>
+        <div class="topnav" class="text-secondary">
+            <a href="home.html" target="_blank">Home</a>
+            <a href="mosque.html" target="_blank">Mosque and Prayer times</a>
+            <a href="charity.html" target="_blank">Donate</a>
+            <div class="dropdown">
+        <button class="dropbtn" class="active"><a class="active">Learning</a>
+          <div class="dropdown-content">
+            <a class="active">learning</a>
+            <a href="books.html">pdf</a>
+            <a href="videos.html">videos</a>
+            <a href="audios.htm">audios</a>
+          </div>
+        </button>
+      </div>
+            <a href="business.html" target="_blank">Shop</a>
+            <a href="events.html" target="_blank">Events</a>
+            <div class="dropdown">
+        <button class="dropbtn">Login</button>
+          <div class="dropdown-content">
+            <a href="login.html">login</a>
+            <a href="register.html">register</a>
+          </div>
+            </div>
+        </div>
+        <div class="container">
+          <div class="column">
+            <div class="card">
+              <p>Wanna try our Islamic quiz series to test your understanding?</p>
+              <p>It has 20 sessions of five questions each - ranging across different Islamic subjects</p>
+              <a href="quiz.html" target="_blank">Start now</a></button>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+        <div class="column">
+            <div class="card">
+                <h2>JKUATES</h2>
+                <h3>Short and professional courses</h3>
+            </div>
+            <div class="card">
+                <h2>Zad Academy</h2>
+                <h3>Islamic subjects in 2 years</h3>
+            </div>
+            <div class="card">
+                <h2>International Open University</h2>
+                <h3>Learn Islam online by Dr. Bilal Phillips</h3>
+            </div>
+            <div class="card">
+                <h2>JKUAT</h2>
+                <h3>Pursue Degree and Diploma Courses</h3>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <h2>PDF</h2>
+                <h3>Download free Islamic books and notes</h3>
+                <p>See more <a href="books.html">>>></a></p>
+            </div>
+            <div class="card">
+                <h2>Videos</h2>
+                <h3>Watch Islamic lectures</h3>
+                <p>See more <a href="videos.html">>>></a></p>
+            </div>
+            <div class="card">
+                <h2>Audios</h2>
+                <h3>Listen to Islamic lectures</h3>
+                <p>See more <a href="audios.html">>>></a></p>
+            </div>
+            <div class="card">
+                <h2>Websites</h2>
+                <h3>Explore trusted Islamic resources</h3>
+                <p>See more <a href="websites.html">>>></a></p>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>
